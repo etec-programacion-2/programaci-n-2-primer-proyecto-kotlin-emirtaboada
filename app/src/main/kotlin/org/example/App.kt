@@ -17,7 +17,11 @@ fun main() {
     println("El número $numero2 es ${tipoDeNumero(numero2)}")
 
     mostrarNumerosConLoops()
-    mostrarNumerosPares() // <-- Agregado aquí
+    mostrarNumerosPares()
+    
+    val base = 3
+    val exponente = 4
+    println("La potencia de $base elevado a $exponente es ${potencia(base, exponente)}")
 }
 
 // Paso 2: Variables y tipos de datos
@@ -115,4 +119,22 @@ fun mostrarNumerosPares() {
         }
         k++
     } while (k <= 20)
+}
+
+// Paso 5: Funciones
+fun factorial(n: Int): Int {
+    return if (n <= 1) 1 else n * factorial(n - 1)
+}
+
+fun saludar(nombre: String, edad: Int = 0) {
+    println("Hola $nombre, tienes $edad años")
+}
+
+// Paso 5 adicional: Funciones
+fun potencia(base: Int, exponente: Int): Int {
+    return if (exponente == 0) {
+        1
+    } else {
+        base * potencia(base, exponente - 1)
+    }
 }
